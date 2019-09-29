@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghis.Windows.Controls", "src\Ghis.Windows.Controls\Ghis.Windows.Controls.csproj", "{A41BBEC8-3D19-497C-8540-46A452D82BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ghis.Windows.Controls", "src\Ghis.Windows.Controls\Ghis.Windows.Controls.csproj", "{A41BBEC8-3D19-497C-8540-46A452D82BF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A55F17D-0FFA-4460-B995-77E14A339872}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A41BBEC8-3D19-497C-8540-46A452D82BF9} = {6A55F17D-0FFA-4460-B995-77E14A339872}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FDBE87F-6D94-4AA3-98E4-5861F92C1623}

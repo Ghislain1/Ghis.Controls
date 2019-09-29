@@ -109,10 +109,12 @@ namespace Ghis.Windows.Controls
 
         private static void OnProgressValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            // TODO: Check Mui  how he does
         }
 
         private static void PatchInlineStyle(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            // TODO: Check Mui  how he does
         }
 
         private void SetCurrentState(bool animate)

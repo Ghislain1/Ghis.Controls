@@ -4,10 +4,12 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.7</Version>
+    <Version>1.0.2</Version>
     <Authors>@Ghis Z.</Authors>
     <Company>GhislainOne</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Description>A set of UI controls that can be used for designing better user interfaces for Windows.</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

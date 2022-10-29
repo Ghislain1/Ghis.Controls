@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Ghis.Windows.Controls.Test.Charts
 {
@@ -13,7 +14,9 @@ namespace Ghis.Windows.Controls.Test.Charts
         [TestMethod]
         public void VerifyVersionDescription()
         {
-            
+            Window wind = new Window();
+            wind.Show();
+
         }
     }
 }

@@ -19,6 +19,15 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
+      - name: Run dotnet format
+        id: format
+        uses: jfversluis/dotnet-format@v1.0.5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          action: "fix"
+          #only-changed-files: true # only works for PRs
+          #workspace: "Ghis.Windows.Controls.sln"
+
       - name: Restore dependencies
         run: dotnet restore
 

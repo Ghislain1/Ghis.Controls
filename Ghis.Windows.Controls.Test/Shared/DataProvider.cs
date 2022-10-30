@@ -67,5 +67,22 @@ namespace Ghis.Windows.Controls.Test.Shared
             DisplayPropertyInfo(propInfos1);
             return propInfos1;
         }
+
+        public static (double []XValues, double []YValues) GetSinWave(int numberOfPoints=8000)
+        {
+
+            double[] y = new double[numberOfPoints];
+            double[] x = new double[numberOfPoints];
+            double amplitude = 0.25 * short.MaxValue;
+            double frequency = 1000;
+            for (int k = 0; k< y.Length; k++)
+            {
+                x[k]=(2 * Math.PI * k * frequency);
+                y[k] = amplitude * Math.Sin(x[k]) / numberOfPoints;
+                 
+            }
+            return (x, y);
+
+        }
     }
 }

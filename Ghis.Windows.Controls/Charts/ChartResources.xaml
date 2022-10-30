@@ -61,14 +61,17 @@
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid >
                             <Grid.RowDefinitions>
+                                <!-- For Title placeholder -->
                                 <RowDefinition Height="Auto" />
-                                <RowDefinition />
+                                <!-- For Chart placeholder -->
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
+                            <!--Title Using directly property Title in Control-->
                             <ContentPresenter HorizontalAlignment="Center" ContentSource="Title" />
-                            <Grid ShowGridLines="False" Grid.Row="1">
+                            <Grid  ShowGridLines="False" Grid.Row="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition Height="Auto" />

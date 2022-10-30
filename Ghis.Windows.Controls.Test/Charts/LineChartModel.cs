@@ -8,6 +8,7 @@ namespace Ghis.Windows.Controls.Test.Charts
 {
     internal class LineChartModel
     {
-        public double ValuePathData { get; set; }   
+        public double YValue { get; set; }
+        public double XValue { get; set; }
     }
 }

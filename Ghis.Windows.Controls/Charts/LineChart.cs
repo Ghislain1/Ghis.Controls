@@ -178,9 +178,6 @@ namespace Ghis.Windows.Controls.Charts
         public static readonly DependencyProperty LabelPathProperty =
             DependencyProperty.Register("LabelPath", typeof(PropertyPath), typeof(LineChart), new UIPropertyMetadata(null));
 
-
-
-
         public bool ShowValueAxisTicks
         {
             get { return (bool)GetValue(ShowValueAxisTicksProperty); }
@@ -190,8 +187,6 @@ namespace Ghis.Windows.Controls.Charts
         // Using a DependencyProperty as the backing store for ShowValueAxisTicks.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ShowValueAxisTicksProperty =
             DependencyProperty.Register("ShowValueAxisTicks", typeof(bool), typeof(LineChart), new UIPropertyMetadata(null));
-
-
 
         public bool ShowLabelAxisTicks
         {

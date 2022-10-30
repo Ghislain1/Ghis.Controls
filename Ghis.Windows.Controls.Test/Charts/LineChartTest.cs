@@ -13,6 +13,10 @@ namespace Ghis.Windows.Controls.Test.Charts
     [TestClass]
     public  class LineChartTest
     {
+       // TODO:
+       // 1. Write test in output console for tests
+       // use edit config
+
         [WpfUserControlTestMethod]
         public void Show_LineChart_InAction_Test()
         {

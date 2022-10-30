@@ -1,6 +1,8 @@
 ﻿using Ghis.Windows.Controls.Charts;
+using Ghis.Windows.Controls.Test.Shared;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -10,72 +12,29 @@ namespace Ghis.Windows.Controls.Test.Charts
 {
     internal class LineChartViewModel
     {
-        public LineChartViewModel()
-        {
-            this.Load();
-        }
+        private ObservableCollection<object> historyCollection;
+        public ObservableCollection<object> HistoryCollection => this.historyCollection??=new ObservableCollection<object>();
+        public ObservableCollection<PropertyInfo> PropertyInfoCollection { get; private set; }
+        public string Title => "Line Chart :D";
+
+        public LineChartViewModel() => this.Load();
 
         private async void Load()
         {
             await Task.Run(() =>
             {
-                Type t = typeof(LineChart);
-                // Get the public properties.
-                PropertyInfo[] propInfos = t.GetProperties(BindingFlags.Public|BindingFlags.Instance);
-                Console.WriteLine("The number of public properties: {0}.\n",
-                                  propInfos.Length);
-                // Display the public properties.
-                DisplayPropertyInfo(propInfos);
-
-                // Get the nonpublic properties.
-                PropertyInfo[] propInfos1 = t.GetProperties(BindingFlags.NonPublic|BindingFlags.Instance);
-                Console.WriteLine("The number of non-public properties: {0}.\n",
-                                  propInfos1.Length);
-                // Display all the nonpublic properties.
-                DisplayPropertyInfo(propInfos1);
-
+                var propInfos=DataProvider.GetPublicProperties(typeof(LineChart));
+                var propInfos1 = DataProvider.GetNonPublicProperties(typeof(LineChart));
+                this.PropertyInfoCollection=  new ObservableCollection<PropertyInfo>( propInfos.Concat(propInfos1));
             });
-        }
 
-        public static void DisplayPropertyInfo(PropertyInfo[] propInfos)
-        {
-            // Display information for all properties.
-            foreach (var propInfo in propInfos)
+            for (int i = 0; i < 10; i++)
             {
-                bool readable = propInfo.CanRead;
-                bool writable = propInfo.CanWrite;
+                this.HistoryCollection.Add(new LineChartModel() { ValuePathData = i });
 
-                Console.WriteLine("   Property name: {0}", propInfo.Name);
-                Console.WriteLine("   Property type: {0}", propInfo.PropertyType);
-                Console.WriteLine("   Read-Write:    {0}", readable & writable);
-                if (readable)
-                {
-                    MethodInfo getAccessor = propInfo.GetMethod;
-                    Console.WriteLine("   Visibility:    {0}",
-                                      GetVisibility(getAccessor));
-                }
-                if (writable)
-                {
-                    MethodInfo setAccessor = propInfo.SetMethod;
-                    Console.WriteLine("   Visibility:    {0}",
-                                      GetVisibility(setAccessor));
-                }
-                Console.WriteLine();
             }
         }
 
-        public static String GetVisibility(MethodInfo accessor)
-        {
-            if (accessor.IsPublic)
-                return "Public";
-            else if (accessor.IsPrivate)
-                return "Private";
-            else if (accessor.IsFamily)
-                return "Protected";
-            else if (accessor.IsAssembly)
-                return "Internal/Friend";
-            else
-                return "Protected Internal/Friend";
-        }
+     
     }
 }

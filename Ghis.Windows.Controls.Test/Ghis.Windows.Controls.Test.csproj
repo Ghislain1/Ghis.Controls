@@ -8,6 +8,8 @@
     <Nullable>enable</Nullable>     
     <Authors>@Ghis Z.</Authors>
     <Company>GhislainOne</Company>
+    
+    <UseWPF>true</UseWPF>
  
   </PropertyGroup>
 

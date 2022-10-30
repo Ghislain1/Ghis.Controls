@@ -41,8 +41,8 @@ namespace Ghis.Windows.Controls.Test.Charts
         public LineChartViewModel()
         {
             BindingOperations.EnableCollectionSynchronization(this.HistoryCollection, _lock);
-            this.Load();
-            SimulateTitle();
+         //  this.Load();
+           SimulateTitle();
         }
         private async void SimulateTitle()
         {
@@ -54,10 +54,10 @@ namespace Ghis.Windows.Controls.Test.Charts
                 this.LabelAxisTitle =this.Title;
                 count++;
                 this.ShowLabelAxisTicks=!this.ShowLabelAxisTicks;
-                //this.HistoryCollection.Clear();
+                this.HistoryCollection.Clear();
                 for (int i = 0; i < 10; i++)
                 {
-                   // this.HistoryCollection.Add(new LineChartModel() { YValue = i*2, XValue=i });
+                   this.HistoryCollection.Add(new LineChartModel() { YValue = i*2, XValue=i });
 
                 }
                 if (count%7==0)

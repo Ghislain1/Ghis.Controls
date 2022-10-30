@@ -1,5 +1,4 @@
 name: Build
-
 on:
   push:
     branches: [main]
@@ -9,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - name: Check Out
       - uses: actions/checkout@v2
@@ -35,4 +33,4 @@ jobs:
         run: dotnet build -c Release --no-restore
 
       - name: Test On Debug
-        run: dotnet test -c Debug --no-restore --verbosity normal --collect:"XPlat Code Coverage"
+        run: dotnet test -c Debug --no-restore --verbosity normal

@@ -29,3 +29,9 @@ _______________
 ## ProgressBars
 ## Themes
 
+# Inspirations
+- [MUI](https://github.com/firstfloorsoftware/mui)
+  - Style and his controls connection
+  - Definition sof DependencyProperies
+  - 
+

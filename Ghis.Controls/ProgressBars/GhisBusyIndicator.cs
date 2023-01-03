@@ -70,6 +70,7 @@ namespace Ghis.Controls
 
         static GhisBusyIndicator()
         {
+            //TODO@Ghis == why? ovverrideMetadata hier?
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GhisBusyIndicator), new FrameworkPropertyMetadata(typeof(GhisBusyIndicator)));
         }
 
@@ -78,8 +79,8 @@ namespace Ghis.Controls
         /// </summary>
         public bool IsBusy
         {
-            get { return (bool)GetValue(IsBusyProperty); }
-            set { SetValue(IsBusyProperty, value); }
+            get => (bool)GetValue(IsBusyProperty); 
+            set =>  SetValue(IsBusyProperty, value);  
         }
 
         /// <summary>
@@ -87,8 +88,8 @@ namespace Ghis.Controls
         /// </summary>
         public double ProgressValue
         {
-            get { return (double)GetValue(ProgressValueProperty); }
-            set { SetValue(ProgressValueProperty, value); }
+            get => (double)GetValue(ProgressValueProperty); 
+            set =>  SetValue(ProgressValueProperty, value); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Ghis.Controls
 
         private void SetCurrentState(bool animate)
         {
-            var state = !this.IsBusy ? StateActive : StateInactive;
+            var state = !IsBusy ? StateActive : StateInactive;
 
             VisualStateManager.GoToState(this, state, animate);
         }

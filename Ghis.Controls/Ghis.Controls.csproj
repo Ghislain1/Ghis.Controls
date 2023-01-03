@@ -20,6 +20,14 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+ 
+
+  <ItemGroup>
+    <Page Update="Assets\SpectrumAnalyzer.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 
 
 </Project>

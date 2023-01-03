@@ -1,11 +1,6 @@
 ﻿using Ghis.Controls.Test.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+ 
 namespace Ghis.Controls.Test.ProgressBars
 {
     [TestClass]
@@ -14,7 +9,8 @@ namespace Ghis.Controls.Test.ProgressBars
         [WpfUserControlTestMethod]
         public void Show_BusyIndicator_InAction_Test()
         {
-            var content = new GhisBusyIndicator() { };
+            var content = new GhisBusyIndicator() ;
+            content.IsBusy = true;
             WpfInteraction.ShowDialog(content); 
         }
     }

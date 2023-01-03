@@ -1,4 +1,4 @@
-﻿using Ghis.Windows.Controls.Test.Shared;
+﻿using Ghis.Controls.Test.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ghis.Windows.Controls.Test.ProgressBars
+namespace Ghis.Controls.Test.ProgressBars
 {
     [TestClass]
     public class GhisBusyIndicatorTest

@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ContinuousAxis : ItemsControl
     {

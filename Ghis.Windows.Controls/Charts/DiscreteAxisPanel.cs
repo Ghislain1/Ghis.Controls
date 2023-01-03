@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Data;
 using System;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class DiscreteAxisPanel : Panel
     {

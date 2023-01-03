@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ghis.Windows.Controls.Test.Shared
+namespace Ghis.Controls.Test.Shared
 {
     internal class WpfUserControlTestMethodAttribute: TestMethodAttribute
     {

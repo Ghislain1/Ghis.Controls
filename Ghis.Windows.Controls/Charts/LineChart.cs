@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Controls;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class LineChart : Chart
     {

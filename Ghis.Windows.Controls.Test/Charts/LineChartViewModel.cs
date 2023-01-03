@@ -1,5 +1,5 @@
-﻿using Ghis.Windows.Controls.Charts;
-using Ghis.Windows.Controls.Test.Shared;
+﻿using Ghis.Controls.Charts;
+using Ghis.Controls.Test.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Ghis.Windows.Controls.Test.Charts
+namespace Ghis.Controls.Test.Charts
 {
     internal class LineChartViewModel : BindableBase
     {

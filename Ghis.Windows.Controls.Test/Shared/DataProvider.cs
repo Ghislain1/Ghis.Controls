@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Ghis.Windows.Controls.Test.Shared
+namespace Ghis.Controls.Test.Shared
 {
     internal static class DataProvider
     {

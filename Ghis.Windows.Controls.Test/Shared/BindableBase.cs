@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ghis.Windows.Controls.Test.Shared
+namespace Ghis.Controls.Test.Shared
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {

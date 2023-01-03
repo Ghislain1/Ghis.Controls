@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Media;
 using System.Collections.Specialized;
 using System;
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ChartLines : FrameworkElement
     {

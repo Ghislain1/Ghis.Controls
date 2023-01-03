@@ -7,7 +7,7 @@ using System;
 using System.Windows.Controls;
 using System.Collections.Specialized;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ValueExtractor : Freezable
     {

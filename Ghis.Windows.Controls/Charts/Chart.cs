@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using System.Windows;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     // how Connection beetween Title and his TitleTemplate? over ContentPresenter
     public class Chart : ItemsControl

@@ -10,7 +10,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Collections.Specialized;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ContinuousAxisPanel : Panel
     {

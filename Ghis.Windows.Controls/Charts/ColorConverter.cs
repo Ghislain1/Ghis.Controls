@@ -7,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Controls;
 using System.Windows;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ColorConverter : IValueConverter
     {

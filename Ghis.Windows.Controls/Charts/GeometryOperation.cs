@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Collections;
 using System;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class GeometryOperation
     {

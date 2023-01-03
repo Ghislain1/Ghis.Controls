@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ghis.Windows.Controls\Ghis.Windows.Controls.csproj" />
+    <ProjectReference Include="..\Ghis.Controls\Ghis.Controls.csproj" />
   </ItemGroup>
   
 </Project>

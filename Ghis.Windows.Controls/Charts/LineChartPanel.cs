@@ -7,7 +7,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class LineChartPanel : Panel
     {

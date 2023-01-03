@@ -1,14 +1,7 @@
-﻿using Ghis.Windows.Controls.Test.Shared;
+﻿using Ghis.Controls.Test.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 
-namespace Ghis.Windows.Controls.Test.Charts
+namespace Ghis.Controls.Test.Charts
 {
     [TestClass]
     public  class LineChartTest

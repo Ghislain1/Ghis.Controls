@@ -6,7 +6,7 @@ using System.Windows.Shapes;
 using System;
 using System.Windows.Controls;
 
-namespace Ghis.Windows.Controls.Charts
+namespace Ghis.Controls.Charts
 {
     public class ClipWedge : ContentControl
     {

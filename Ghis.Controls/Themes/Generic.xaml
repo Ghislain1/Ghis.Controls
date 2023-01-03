@@ -1,12 +1,10 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> 
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Ghis.Controls;component/Assets/GhisBusyIndicator.xaml"/>
-        <ResourceDictionary Source="/Ghis.Controls;component/Assets/LineChartAndPieChart.xaml"/>
-
- 
-    </ResourceDictionary.MergedDictionaries>
-    <!-- Arugment used inside the element in MergedDictionaries !!! up -->
-    <SolidColorBrush x:Key="Accent" Color="GreenYellow" />    
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Ghis.Controls;component/Assets/GhisBusyIndicator.xaml"/>
+    <ResourceDictionary Source="/Ghis.Controls;component/Assets/LineChartAndPieChart.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+  <!-- Arugment used inside the element in MergedDictionaries !!! up -->
+  <SolidColorBrush x:Key="Accent" Color="Green" />
 </ResourceDictionary>

@@ -51,7 +51,7 @@ namespace Ghis.Controls
         public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register("IsBusy", typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(false, new PropertyChangedCallback(GhisBusyIndicator.OnIsBusyChanged)));
 
         /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty IsIndeterminateProperty = DependencyProperty.Register("IsIndeterminate", typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsIndeterminateProperty = DependencyProperty.Register(nameof(IsIndeterminate), typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(true));
 
         /// <summary> Identifies the ProgressBarStyle property. </summary// Token: 0x04000093 RID: 147
         public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register("OverlayStyle", typeof(Style), typeof(GhisBusyIndicator), new PropertyMetadata(new PropertyChangedCallback(GhisBusyIndicator.PatchInlineStyle)));
@@ -82,6 +82,14 @@ namespace Ghis.Controls
             get => (bool)GetValue(IsBusyProperty); 
             set =>  SetValue(IsBusyProperty, value);  
         }
+
+        public bool IsIndeterminate
+        {
+            get => (bool)GetValue(IsIndeterminateProperty);
+            set => SetValue(IsIndeterminateProperty, value);
+        }
+
+        
 
         /// <summary>
         /// Gets or sets the progress value.

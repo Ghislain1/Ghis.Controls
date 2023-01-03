@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Ghis.Controls.Test.Shared
 {
-    internal class WpfUserControlTestMethodAttribute: TestMethodAttribute
+    internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
     {
-        public override TestResult[] ? Execute(ITestMethod testMethod)
+        public override TestResult[]? Execute(ITestMethod testMethod)
         {
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
             {
                 return Invoke(testMethod);
             }
-               
 
-            TestResult[] ? result = null  ;
+
+            TestResult[]? result = null;
             var thread = new Thread(() => result = Invoke(testMethod));
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();

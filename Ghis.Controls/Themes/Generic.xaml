@@ -4,8 +4,7 @@
       <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Ghis.Controls;component/Assets/GhisBusyIndicator.xaml"/>
         <ResourceDictionary Source="/Ghis.Controls;component/Assets/LineChartAndPieChart.xaml"/>
-        <ResourceDictionary Source="/Ghis.Controls;component/Assets/SpectrumAnalyzer.xaml"/>
-    
+
  
     </ResourceDictionary.MergedDictionaries>
     <!-- Arugment used inside the element in MergedDictionaries !!! up -->

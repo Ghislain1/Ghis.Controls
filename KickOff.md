@@ -1,16 +1,4 @@
-```
-_______________
-|
-|
-|
-|       ____________
-|                   |
-|                   |
-|                   |
-|___________________|
 
-
-```
 
 # **Ghis.Controls**
 # Contents
@@ -19,6 +7,9 @@ _______________
 - [Inspirations](#inspirations)
 
 # Intro
+- **.editorconfig**
+  - ( die dot editorconfig) ==> ovveride seeting for V.s , header in cs file should be set there.
+  - using should be paced inside namespace of cs
 # Ghis.Controls
 - Package references
   - 

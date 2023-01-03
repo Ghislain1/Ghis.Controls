@@ -23,5 +23,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Ghis.Controls\Ghis.Controls.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>Libs\NAudio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   
 </Project>

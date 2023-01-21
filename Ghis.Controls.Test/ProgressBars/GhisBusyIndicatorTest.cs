@@ -27,13 +27,21 @@ namespace Ghis.Controls.Test.ProgressBars
 
 
         [WpfUserControlTestMethod]
-        [Description("TODO@GhZe Issue :System.InvalidOperationException: The calling thread must be STA, because many UI components require this.")]
+        [Description("TODO@GhZe Issue :System.InvalidOperationException: The calling thread must be STA, because many UI components require this. ==> used WpfUserControlTestMethod ")]
         public void DefaultVerticalAlignment_ShouldBeStretch()
         {
             var ghisBusyIndicator = new GhisBusyIndicator();
            // ghisBusyIndicator.ApplyDefaultStyle();
 
             Assert.AreEqual(VerticalAlignment.Stretch, ghisBusyIndicator.VerticalAlignment);
+        }
+
+        [WpfUserControlTestMethod]
+         public void HasContent_ShouldBeFalse()
+        {
+            var ghisBusyIndicator = new GhisBusyIndicator();          
+        
+            Assert.AreEqual(false, ghisBusyIndicator.HasContent);
         }
     }
 }

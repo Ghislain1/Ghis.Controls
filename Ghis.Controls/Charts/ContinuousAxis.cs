@@ -1,15 +1,14 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Data;
-using System;
-using System.Collections;
-using System.Collections.ObjectModel;
-
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Data;
+    using System;
+    using System.Collections;
+    using System.Collections.ObjectModel;
+
     public class ContinuousAxis : ItemsControl
     {
         static ContinuousAxis()
@@ -27,7 +26,7 @@ namespace Ghis.Controls.Charts
             return item is ContentControl;
         }
 
-      
+
         public ObservableCollection<double> SourceValues
         {
             get { return (ObservableCollection<double>)GetValue(SourceValuesProperty); }

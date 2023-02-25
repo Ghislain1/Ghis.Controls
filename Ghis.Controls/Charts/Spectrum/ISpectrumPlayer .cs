@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ghis.Controls.Charts.Spectrum
+﻿namespace Ghis.Controls.Charts.Spectrum
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Media;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Provides access to sound player functionality needed to
     /// render a spectrum analyzer.
     /// </summary>
-    public interface ISpectrumPlayer :   INotifyPropertyChanged
+    public interface ISpectrumPlayer : INotifyPropertyChanged
     {
         /// <summary>
         /// Gets whether the sound player is currently playing audio.

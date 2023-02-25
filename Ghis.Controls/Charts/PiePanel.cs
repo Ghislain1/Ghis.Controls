@@ -1,15 +1,15 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Windows.Data;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+    using System;
+
     public class PiePanel : Panel
     {
         protected override void OnInitialized(System.EventArgs e)

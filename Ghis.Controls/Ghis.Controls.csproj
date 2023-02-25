@@ -11,8 +11,13 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>A set of UI controls that can be used for designing better user interfaces for Windows.</Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Company>GhislainOne</Company>
+    <Copyright>Copyright (C) Ghislain Zeus</Copyright>   
+    <SignAssembly>True</SignAssembly>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>    
   </PropertyGroup>
- 
+  
+  
 
   <ItemGroup>
     <None Include=".\LICENSE">

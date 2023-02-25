@@ -1,11 +1,11 @@
-
-
-using System.Windows.Controls;
-using System.Collections.ObjectModel;
-using System.Windows;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Collections.ObjectModel;
+    using System.Windows;
+
     // how Connection beetween Title and his TitleTemplate? over ContentPresenter
     public class Chart : ItemsControl
     {
@@ -26,7 +26,7 @@ namespace Ghis.Controls.Charts
         }
 
         // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(nameof(Title) , typeof(object), typeof(Chart), new UIPropertyMetadata(null));
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(nameof(Title), typeof(object), typeof(Chart), new UIPropertyMetadata(null));
 
         public DataTemplate TitleTemplate
         {

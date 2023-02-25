@@ -31,105 +31,105 @@ using System.Windows.Controls;
 ///
 ///
 /// Represents a control that indicates that an operation is ongoing. </summary>
-    [TemplateVisualState(GroupName = GroupActiveStates, Name = StateInactive)]
-    [TemplateVisualState(GroupName = GroupActiveStates, Name = StateActive)]
-    public class GhisBusyIndicator : ContentControl
+[TemplateVisualState(GroupName = GroupActiveStates, Name = StateInactive)]
+[TemplateVisualState(GroupName = GroupActiveStates, Name = StateActive)]
+public class GhisBusyIndicator : ContentControl
+{
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty BusyContentProperty = DependencyProperty.Register("BusyContent", typeof(object), typeof(GhisBusyIndicator), new PropertyMetadata("BusyIndicatorLoading"));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty BusyContentTemplateProperty = DependencyProperty.Register("BusyContentTemplate", typeof(DataTemplate), typeof(GhisBusyIndicator), new PropertyMetadata(null));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty DisplayAfterProperty = DependencyProperty.Register("DisplayAfter", typeof(TimeSpan), typeof(GhisBusyIndicator), new PropertyMetadata(TimeSpan.FromSeconds(0.1)));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty IsBusyIndicationVisibleProperty;
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register("IsBusy", typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(false, new PropertyChangedCallback(GhisBusyIndicator.OnIsBusyChanged)));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty IsIndeterminateProperty = DependencyProperty.Register(nameof(IsIndeterminate), typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(true));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary// Token: 0x04000093 RID: 147
+    public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register("OverlayStyle", typeof(Style), typeof(GhisBusyIndicator), new PropertyMetadata(new PropertyChangedCallback(GhisBusyIndicator.PatchInlineStyle)));
+
+    /// <summary> Identifies the ProgressBarStyle property. </summary
+    public static readonly DependencyProperty ProgressBarStyleProperty = DependencyProperty.Register("ProgressBarStyle", typeof(Style), typeof(GhisBusyIndicator), new PropertyMetadata(new PropertyChangedCallback(GhisBusyIndicator.PatchInlineStyle)));
+
+    /// <summary> Identifies the ProgressValue property.
+    ///
+    /// </summary
+    public static readonly DependencyProperty ProgressValueProperty = DependencyProperty.Register("ProgressValue", typeof(double), typeof(GhisBusyIndicator), new PropertyMetadata(0.0, new PropertyChangedCallback(GhisBusyIndicator.OnProgressValuePropertyChanged)));
+
+    private const string GroupActiveStates = "ActiveStates";
+    private const string StateActive = "Active";
+    private const string StateInactive = "Inactive";
+
+    static GhisBusyIndicator()
     {
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty BusyContentProperty = DependencyProperty.Register("BusyContent", typeof(object), typeof(GhisBusyIndicator), new PropertyMetadata("BusyIndicatorLoading"));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty BusyContentTemplateProperty = DependencyProperty.Register("BusyContentTemplate", typeof(DataTemplate), typeof(GhisBusyIndicator), new PropertyMetadata(null));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty DisplayAfterProperty = DependencyProperty.Register("DisplayAfter", typeof(TimeSpan), typeof(GhisBusyIndicator), new PropertyMetadata(TimeSpan.FromSeconds(0.1)));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty IsBusyIndicationVisibleProperty;
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register("IsBusy", typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(false, new PropertyChangedCallback(GhisBusyIndicator.OnIsBusyChanged)));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty IsIndeterminateProperty = DependencyProperty.Register(nameof(IsIndeterminate), typeof(bool), typeof(GhisBusyIndicator), new PropertyMetadata(true));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary// Token: 0x04000093 RID: 147
-        public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register("OverlayStyle", typeof(Style), typeof(GhisBusyIndicator), new PropertyMetadata(new PropertyChangedCallback(GhisBusyIndicator.PatchInlineStyle)));
-
-        /// <summary> Identifies the ProgressBarStyle property. </summary
-        public static readonly DependencyProperty ProgressBarStyleProperty = DependencyProperty.Register("ProgressBarStyle", typeof(Style), typeof(GhisBusyIndicator), new PropertyMetadata(new PropertyChangedCallback(GhisBusyIndicator.PatchInlineStyle)));
-
-        /// <summary> Identifies the ProgressValue property.
-        ///
-        /// </summary
-        public static readonly DependencyProperty ProgressValueProperty = DependencyProperty.Register("ProgressValue", typeof(double), typeof(GhisBusyIndicator), new PropertyMetadata(0.0, new PropertyChangedCallback(GhisBusyIndicator.OnProgressValuePropertyChanged)));
-
-        private const string GroupActiveStates = "ActiveStates";
-        private const string StateActive = "Active";
-        private const string StateInactive = "Inactive";
-
-        static GhisBusyIndicator()
-        {
-            //TODO@Ghis == why? ovverrideMetadata hier?
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(GhisBusyIndicator), new FrameworkPropertyMetadata(typeof(GhisBusyIndicator)));
-        }
-
-        /// <summary>
-        /// Gets or sets the busy value.
-        /// </summary>
-        public bool IsBusy
-        {
-            get => (bool)GetValue(IsBusyProperty); 
-            set =>  SetValue(IsBusyProperty, value);  
-        }
-
-        public bool IsIndeterminate
-        {
-            get => (bool)GetValue(IsIndeterminateProperty);
-            set => SetValue(IsIndeterminateProperty, value);
-        }
-
-        
-
-        /// <summary>
-        /// Gets or sets the progress value.
-        /// </summary>
-        public double ProgressValue
-        {
-            get => (double)GetValue(ProgressValueProperty); 
-            set =>  SetValue(ProgressValueProperty, value); 
-        }
-
-        /// <summary>
-        /// When overridden in a derived class, is invoked whenever application code or internal
-        /// processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
-        /// </summary>
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-
-            SetCurrentState(false);
-        }
-
-        private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((GhisBusyIndicator)d).SetCurrentState(true);
-        }
-
-        private static void OnProgressValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            // TODO: Check Mui  how he does
-        }
-
-        private static void PatchInlineStyle(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            // TODO: Check Mui  how he does
-        }
-
-        private void SetCurrentState(bool animate)
-        {
-            var state = !IsBusy ? StateActive : StateInactive;
-
-            VisualStateManager.GoToState(this, state, animate);
-        }
+        //TODO@Ghis == why? ovverrideMetadata hier?
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(GhisBusyIndicator), new FrameworkPropertyMetadata(typeof(GhisBusyIndicator)));
     }
+
+    /// <summary>
+    /// Gets or sets the busy value.
+    /// </summary>
+    public bool IsBusy
+    {
+        get => (bool)GetValue(IsBusyProperty);
+        set => SetValue(IsBusyProperty, value);
+    }
+
+    public bool IsIndeterminate
+    {
+        get => (bool)GetValue(IsIndeterminateProperty);
+        set => SetValue(IsIndeterminateProperty, value);
+    }
+
+
+
+    /// <summary>
+    /// Gets or sets the progress value.
+    /// </summary>
+    public double ProgressValue
+    {
+        get => (double)GetValue(ProgressValueProperty);
+        set => SetValue(ProgressValueProperty, value);
+    }
+
+    /// <summary>
+    /// When overridden in a derived class, is invoked whenever application code or internal
+    /// processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+    /// </summary>
+    public override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        SetCurrentState(false);
+    }
+
+    private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        ((GhisBusyIndicator)d).SetCurrentState(true);
+    }
+
+    private static void OnProgressValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        // TODO: Check Mui  how he does
+    }
+
+    private static void PatchInlineStyle(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        // TODO: Check Mui  how he does
+    }
+
+    private void SetCurrentState(bool animate)
+    {
+        var state = !IsBusy ? StateActive : StateInactive;
+
+        VisualStateManager.GoToState(this, state, animate);
+    }
+}

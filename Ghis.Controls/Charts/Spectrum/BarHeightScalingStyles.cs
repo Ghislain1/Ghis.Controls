@@ -1,4 +1,4 @@
-﻿ 
+﻿
 
 namespace Ghis.Controls.Charts.Spectrum
 {

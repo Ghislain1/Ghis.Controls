@@ -1,14 +1,14 @@
-
-
-using System.Windows;
-using System.Collections.ObjectModel;
-using System.Windows.Data;
-using System;
-using System.Windows.Controls;
-using System.Collections.Specialized;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Collections.ObjectModel;
+    using System.Windows.Data;
+    using System;
+    using System.Windows.Controls;
+    using System.Collections.Specialized;
+
     public class LabelExtractor : Freezable
     {
         protected override Freezable CreateInstanceCore()
@@ -40,7 +40,7 @@ namespace Ghis.Controls.Charts
                 v.GenerateLabelList();
             }
         }
-        
+
         private void OnLabelsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action.Equals(NotifyCollectionChangedAction.Reset))
@@ -70,7 +70,7 @@ namespace Ghis.Controls.Charts
                 }
             }
         }
-        
+
         private void GenerateLabelList()
         {
             SetValue(LabelsKey, new ObservableCollection<string>());

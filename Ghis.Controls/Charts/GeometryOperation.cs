@@ -1,13 +1,13 @@
-
-
-using System.Windows.Media;
-using System.Windows;
-using System.Windows.Controls;
-using System.Collections;
-using System;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Media;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Collections;
+    using System;
+
     public class GeometryOperation
     {
 
@@ -42,7 +42,7 @@ namespace Ghis.Controls.Charts
                     p1 = transformToFromV.Inverse.Transform(p1);
                 return p1;
             }
-            return new Point(thisV.RenderSize.Width/2, thisV.RenderSize.Height/2);
+            return new Point(thisV.RenderSize.Width / 2, thisV.RenderSize.Height / 2);
         }
 
         /// <summary>

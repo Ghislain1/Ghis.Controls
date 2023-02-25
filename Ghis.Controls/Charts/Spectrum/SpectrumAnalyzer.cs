@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using System.Windows.Threading;
-using System.Windows;
-using System.Xml.Linq;
-
-namespace Ghis.Controls.Charts.Spectrum
+﻿namespace Ghis.Controls.Charts.Spectrum
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using System.Windows.Shapes;
+    using System.Windows.Threading;
+    using System.Windows;
+    using System.Xml.Linq;
+
     /// <summary>
     /// A spectrum analyzer control for visualizing audio level and frequency data.
     /// </summary>
@@ -82,7 +82,7 @@ namespace Ghis.Controls.Charts.Spectrum
             {
                 return MinimumFrequency + 1;
             }
-                
+
             return value;
         }
 
@@ -169,11 +169,11 @@ namespace Ghis.Controls.Charts.Spectrum
         [Category("Common")]
         public int MinimumFrequency
         {
-            
-            get=>            (int)GetValue(MinimumFrequencyProperty);
-            
-            set=>                SetValue(MinimumFrequencyProperty, value);
-            
+
+            get => (int)GetValue(MinimumFrequencyProperty);
+
+            set => SetValue(MinimumFrequencyProperty, value);
+
         }
 
         #endregion

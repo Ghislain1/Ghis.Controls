@@ -1,12 +1,13 @@
-
-
-using System.Windows;
-using System.Collections.ObjectModel;
-using System.Windows.Media;
-using System.Collections.Specialized;
-using System;
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Collections.ObjectModel;
+    using System.Windows.Media;
+    using System.Collections.Specialized;
+    using System;
+
     public class ChartLines : FrameworkElement
     {
         protected override void OnRender(DrawingContext drawingContext)
@@ -24,10 +25,10 @@ namespace Ghis.Controls.Charts
                     for (int i = 0; i < VerticalAxisTickPositions.Count; i++)
                         drawingContext.DrawLine(ReferenceLinePen, new Point(0, VerticalAxisTickPositions[i]), new Point(RenderSize.Width, VerticalAxisTickPositions[i]));
                 }
-                else if(DrawVerticalAxisTickMarks)
+                else if (DrawVerticalAxisTickMarks)
                 {
                     for (int i = 0; i < VerticalAxisTickPositions.Count; i++)
-                        drawingContext.DrawLine(ReferenceLinePen, new Point(VerticalAxis - TickMarksLength/2, VerticalAxisTickPositions[i]), new Point(VerticalAxis + TickMarksLength/2, VerticalAxisTickPositions[i]));
+                        drawingContext.DrawLine(ReferenceLinePen, new Point(VerticalAxis - TickMarksLength / 2, VerticalAxisTickPositions[i]), new Point(VerticalAxis + TickMarksLength / 2, VerticalAxisTickPositions[i]));
                 }
             }
             drawingContext.DrawLine(ReferenceLinePen, new Point(VerticalAxis, 0), new Point(VerticalAxis, RenderSize.Height));
@@ -59,7 +60,7 @@ namespace Ghis.Controls.Charts
 
         public void VerticalAxisTickPositions_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            InvalidateVisual();                        
+            InvalidateVisual();
         }
 
         public Pen ReferenceLinePen
@@ -70,7 +71,7 @@ namespace Ghis.Controls.Charts
 
         // Using a DependencyProperty as the backing store for ReferenceLinePen.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ReferenceLinePenProperty =
-            DependencyProperty.Register("ReferenceLinePen", typeof(Pen), typeof(ChartLines), new UIPropertyMetadata(new Pen(Brushes.Black,1.0)));
+            DependencyProperty.Register("ReferenceLinePen", typeof(Pen), typeof(ChartLines), new UIPropertyMetadata(new Pen(Brushes.Black, 1.0)));
 
 
         public ObservableCollection<double> VerticalAxisTickPositions

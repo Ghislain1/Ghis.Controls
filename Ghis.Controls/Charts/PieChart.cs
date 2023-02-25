@@ -1,11 +1,10 @@
-
-
-using System.Windows;
-using System.Windows.Controls;
-
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Windows.Controls;
+
     public class PieChart : Chart
     {
         static PieChart()

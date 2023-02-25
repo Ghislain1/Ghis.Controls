@@ -1,14 +1,14 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Media;
-using System.Collections.ObjectModel;
-using System.Windows.Data;
-using System;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Collections.ObjectModel;
+    using System.Windows.Data;
+    using System;
+
     public class DiscreteAxisPanel : Panel
     {
         public DiscreteAxisPanel()
@@ -92,8 +92,8 @@ namespace Ghis.Controls.Charts
             if (availableWidth < rectWidth)
                 skipfactor = InternalChildren.Count + 1;
             else
-                skipfactor = (int)Math.Ceiling(InternalChildren.Count/Math.Floor(availableWidth / rectWidth));
-            skipfactor = Math.Min(skipfactor, (int)Math.Ceiling((double)InternalChildren.Count/2.0));
+                skipfactor = (int)Math.Ceiling(InternalChildren.Count / Math.Floor(availableWidth / rectWidth));
+            skipfactor = Math.Min(skipfactor, (int)Math.Ceiling((double)InternalChildren.Count / 2.0));
             bool canDisplayAllLabels = true;
 
             if (skipfactor > 1)
@@ -102,7 +102,7 @@ namespace Ghis.Controls.Charts
             }
 
             double sections = availableWidth / InternalChildren.Count;
-            double startCord = TickMarksLength/2;
+            double startCord = TickMarksLength / 2;
             TickPositions.Add(startCord);
             for (int i = 0; i < InternalChildren.Count; i++)
             {
@@ -110,7 +110,7 @@ namespace Ghis.Controls.Charts
                     TickPositions.Add(startCord + (i + 1) * sections);
                 else
                     TickPositions[i + 1] = startCord + (i + 1) * sections;
-                
+
                 if (canDisplayAllLabels)
                 {
                     Rect r = new Rect(i * sections + sections / 2 - rectWidth / 2, 0, rectWidth, InternalChildren[i].DesiredSize.Height);
@@ -118,7 +118,7 @@ namespace Ghis.Controls.Charts
                 }
                 else
                 {
-                    if((i+1)%skipfactor == 0)
+                    if ((i + 1) % skipfactor == 0)
                     {
                         double x = i * sections + sections / 2 - rectWidth / 2;
                         if (x < 0 || x + rectWidth > availableWidth)

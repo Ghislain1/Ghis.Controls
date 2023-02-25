@@ -1,17 +1,17 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Media;
-using System.Collections.ObjectModel;
-using System;
-using System.Windows.Data;
-using System.Collections;
-using System.ComponentModel;
-using System.Collections.Specialized;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Collections.ObjectModel;
+    using System;
+    using System.Windows.Data;
+    using System.Collections;
+    using System.ComponentModel;
+    using System.Collections.Specialized;
+
     public class ContinuousAxisPanel : Panel
     {
         public ContinuousAxisPanel()
@@ -79,7 +79,7 @@ namespace Ghis.Controls.Charts
 
         private void GenerateItemsSource()
         {
-            if (DataValues==null || DataValues.Count==0)
+            if (DataValues == null || DataValues.Count == 0)
             {
                 return;
             }
@@ -190,11 +190,11 @@ namespace Ghis.Controls.Charts
                         if (_canDisplayAllLabels || (i + 1) % _skipFactor == 0)
                         {
                             r = new Rect(start_width - (i - 1) * increments - rectWidth / 2, 0, rectWidth, rectHeight);
-                            InternalChildren[i-1].Arrange(r);
+                            InternalChildren[i - 1].Arrange(r);
                         }
                         else
                         {
-                            InternalChildren[i-1].Arrange(new Rect(0, 0, 0, 0));
+                            InternalChildren[i - 1].Arrange(new Rect(0, 0, 0, 0));
                         }
                     }
                 }
@@ -216,8 +216,8 @@ namespace Ghis.Controls.Charts
                 Rect r = new Rect(constraint.Width - rectWidth, (start_height - rectHeight / 2), rectWidth, rectHeight);
                 InternalChildren[0].Arrange(r);
                 tempTickPositions.Add(start_height);
-                int count = InternalChildren.Count-1;
-                r = new Rect(constraint.Width - rectWidth, (start_height - count*increments - rectHeight / 2), rectWidth, rectHeight);
+                int count = InternalChildren.Count - 1;
+                r = new Rect(constraint.Width - rectWidth, (start_height - count * increments - rectHeight / 2), rectWidth, rectHeight);
                 InternalChildren[count].Arrange(r);
                 tempTickPositions.Add(start_height - count * increments);
 
@@ -232,7 +232,7 @@ namespace Ghis.Controls.Charts
                         _canDisplayAllLabels = false;
                     }
 
-                    for (int i = 2; i <= InternalChildren.Count-1; i++)
+                    for (int i = 2; i <= InternalChildren.Count - 1; i++)
                     {
                         tempTickPositions.Add(start_height - (i - 1) * increments);
                         if (_canDisplayAllLabels || (i + 1) % _skipFactor == 0)

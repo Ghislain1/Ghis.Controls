@@ -1,18 +1,18 @@
-
-
-using System.Windows;
-using System.Collections.ObjectModel;
-using System.Windows.Data;
-using System;
-using System.Windows.Controls;
-using System.Collections.Specialized;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Collections.ObjectModel;
+    using System.Windows.Data;
+    using System;
+    using System.Windows.Controls;
+    using System.Collections.Specialized;
+
     public class ValueExtractor : Freezable
     {
         protected override Freezable CreateInstanceCore()
-         {
+        {
             return new ValueExtractor();
         }
 
@@ -31,19 +31,19 @@ namespace Ghis.Controls.Charts
 
         private static void OnItemsChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            if(sender is  not  ValueExtractor v )
+            if (sender is not ValueExtractor v)
             {
                 throw new ArgumentException(nameof(sender));
             }
-           // ValueExtractor v = sender as ValueExtractor;
-           // ItemCollection oldItems = args.OldValue as ItemCollection;
+            // ValueExtractor v = sender as ValueExtractor;
+            // ItemCollection oldItems = args.OldValue as ItemCollection;
             ItemCollection newItems = args.NewValue as ItemCollection;
             if (args.OldValue is INotifyCollectionChanged oldItems)
-            { 
-                oldItems.CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged); 
+            {
+                oldItems.CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
             }
-                
-            if ( v.Items is INotifyCollectionChanged vItems)
+
+            if (v.Items is INotifyCollectionChanged vItems)
             {
                 vItems.CollectionChanged += new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
                 if (v.ValuePath is not null)
@@ -51,19 +51,19 @@ namespace Ghis.Controls.Charts
                     v.GenerateValueList();
 
                 }
-                   
+
             }
         }
 
-        private void  OnItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void OnItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if(e.Action.Equals(NotifyCollectionChangedAction.Reset))
+            if (e.Action.Equals(NotifyCollectionChangedAction.Reset))
             {
                 GenerateValueList();
             }
-            else if(e.Action.Equals(NotifyCollectionChangedAction.Remove))
+            else if (e.Action.Equals(NotifyCollectionChangedAction.Remove))
             {
-                for(int i=0; i<e.OldItems.Count; i++)
+                for (int i = 0; i < e.OldItems.Count; i++)
                 {
                     Values.RemoveAt(e.OldStartingIndex);
                 }
@@ -76,7 +76,7 @@ namespace Ghis.Controls.Charts
             {
                 for (int i = 0; i < e.NewItems.Count; i++)
                 {
-                    CreateInternalBinding(Items[e.NewStartingIndex+i]);
+                    CreateInternalBinding(Items[e.NewStartingIndex + i]);
                     if (e.Action.Equals(NotifyCollectionChangedAction.Add))
                         Values.Insert(e.NewStartingIndex + i, ValueHolder);
                     else

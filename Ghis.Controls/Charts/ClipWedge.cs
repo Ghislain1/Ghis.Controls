@@ -1,13 +1,13 @@
-
-
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using System;
-using System.Windows.Controls;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Windows.Shapes;
+    using System;
+    using System.Windows.Controls;
+
     public class ClipWedge : ContentControl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
@@ -19,7 +19,7 @@ namespace Ghis.Controls.Charts
         public static void OnWedgeShapeChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
             ClipWedge c = sender as ClipWedge;
-            if(c!=null)
+            if (c != null)
                 c.InvalidateArrange();
         }
 
@@ -37,7 +37,7 @@ namespace Ghis.Controls.Charts
             clipGC.LineTo(LineToPoint, false, true);
             Vector v = LineToPoint - BeginFigurePoint;
             RotateTransform rt = new RotateTransform(WedgeAngle, BeginFigurePoint.X, BeginFigurePoint.Y);
-            bool isLargeArc = WedgeAngle >180.0;
+            bool isLargeArc = WedgeAngle > 180.0;
             clipGC.ArcTo(rt.Transform(LineToPoint), new Size(v.Length, v.Length), WedgeAngle, isLargeArc, SweepDirection.Clockwise, false, true);
             clipGC.Close();
             return clip;

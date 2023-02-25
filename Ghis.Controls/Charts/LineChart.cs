@@ -1,11 +1,11 @@
-
-
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Controls;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Windows.Controls;
+
     public class LineChart : Chart
     {
         static LineChart()
@@ -249,5 +249,5 @@ namespace Ghis.Controls.Charts
 
 
 
-     }
+    }
 }

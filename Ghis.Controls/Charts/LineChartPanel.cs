@@ -1,14 +1,14 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Media;
-using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Media;
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+
     public class LineChartPanel : Panel
     {
         protected override void OnInitialized(System.EventArgs e)
@@ -16,7 +16,7 @@ namespace Ghis.Controls.Charts
             base.OnInitialized(e);
             _childrenPositions = new ObservableCollection<Point>();
         }
-        
+
         private static void OnValuesChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
             LineChartPanel v = sender as LineChartPanel;
@@ -27,14 +27,14 @@ namespace Ghis.Controls.Charts
             if (oldItems != null)
                 ((INotifyCollectionChanged)oldItems).CollectionChanged -= new NotifyCollectionChangedEventHandler(v.LineChartPanel_CollectionChanged);
 
-            if(args.Property == LineChartPanel.XValuesProperty)
+            if (args.Property == LineChartPanel.XValuesProperty)
             {
-                if (GetXValues(v)!= null)
+                if (GetXValues(v) != null)
                     GetXValues(v).CollectionChanged += new NotifyCollectionChangedEventHandler(v.LineChartPanel_CollectionChanged);
             }
-            else if(args.Property == LineChartPanel.YValuesProperty)
+            else if (args.Property == LineChartPanel.YValuesProperty)
             {
-                if(GetYValues(v)!=null)
+                if (GetYValues(v) != null)
                     GetYValues(v).CollectionChanged += new NotifyCollectionChangedEventHandler(v.LineChartPanel_CollectionChanged);
             }
             v.InvalidateArrange();
@@ -74,11 +74,11 @@ namespace Ghis.Controls.Charts
             pathGeometry.Figures.Add(pathFigure);
             pathFigure.StartPoint = (Point)GeometryOperation.ComputeIntersectionPoint((FrameworkElement)InternalChildren[0], (FrameworkElement)InternalChildren[1]);
             PolyLineSegment pls = new PolyLineSegment();
-            for(int i=1; i < InternalChildren.Count; i++)
-                pls.Points.Add(GeometryOperation.ComputeIntersectionPoint((FrameworkElement)InternalChildren[i], 
-                    ((FrameworkElement)InternalChildren[i-1])));
+            for (int i = 1; i < InternalChildren.Count; i++)
+                pls.Points.Add(GeometryOperation.ComputeIntersectionPoint((FrameworkElement)InternalChildren[i],
+                    ((FrameworkElement)InternalChildren[i - 1])));
             pathFigure.Segments.Add(pls);
-            if(AreaBrush!=null)
+            if (AreaBrush != null)
             {
                 pathFigure.Segments.Add(new LineSegment(new Point(_childrenPositions[_childrenPositions.Count - 1].X, GetHorizontalAxis(this)), false));
                 pathFigure.Segments.Add(new LineSegment(new Point(_childrenPositions[0].X, GetHorizontalAxis(this)), false));
@@ -91,7 +91,7 @@ namespace Ghis.Controls.Charts
             PathGeometry pathGeometry = new PathGeometry();
             PathFigure pathFigure = new PathFigure();
             pathGeometry.Figures.Add(pathFigure);
-            
+
             Point[] catmullRomPoints = new Point[_childrenPositions.Count];
             _childrenPositions.CopyTo(catmullRomPoints, 0);
             Point[] bezierPoints = GeometryOperation.CatmullRom(catmullRomPoints);

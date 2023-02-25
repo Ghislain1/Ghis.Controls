@@ -1,14 +1,13 @@
-
-
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Data;
-using System;
-using System.Collections.ObjectModel;
-
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System.Windows.Controls;
+    using System.Windows;
+    using System.Windows.Data;
+    using System;
+    using System.Collections.ObjectModel;
+
     public class DiscreteAxis : ItemsControl
     {
         static DiscreteAxis()

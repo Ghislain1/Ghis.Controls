@@ -10,16 +10,13 @@ namespace Ghis.Controls.Test.ProgressBars
     [TestClass]
     public class GhisBusyIndicatorTest
     {
-        //[WpfUserControlTestMethod]
+        [WpfUserControlTestMethod]
         public void Show_BusyIndicator_InAction_Test()
         {
             var content = new GhisBusyIndicator();
             content.Height = 400;
             content.Width = 400;
             content.IsIndeterminate = false;
-
-
-
             WpfInteraction.ShowDialog(content);
         }
 

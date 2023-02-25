@@ -1,14 +1,14 @@
-
-
-using System;
-using System.Collections.Generic;
-using System.Windows.Media;
-using System.Windows.Data;
-using System.Windows.Controls;
-using System.Windows;
-
 namespace Ghis.Controls.Charts
 {
+
+
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Media;
+    using System.Windows.Data;
+    using System.Windows.Controls;
+    using System.Windows;
+
     public class ColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -18,7 +18,7 @@ namespace Ghis.Controls.Charts
 
             UIElement c = value as UIElement;
             Panel p = (Panel)VisualTreeHelper.GetParent(c);
-            if(p == null)
+            if (p == null)
             {
                 r = new Random((int)DateTime.Now.Ticks);
             }

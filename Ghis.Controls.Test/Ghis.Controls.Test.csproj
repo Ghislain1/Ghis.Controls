@@ -24,5 +24,9 @@
     <ProjectReference Include="..\Ghis.Controls\Ghis.Controls.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TabHeaders\" />
+  </ItemGroup>
+
   
 </Project>

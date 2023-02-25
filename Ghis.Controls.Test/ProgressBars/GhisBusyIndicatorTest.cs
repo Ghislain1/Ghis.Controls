@@ -20,9 +20,6 @@ namespace Ghis.Controls.Test.ProgressBars
             WpfInteraction.ShowDialog(content);
         }
 
-
-
-
         [WpfUserControlTestMethod]
         [Description("TODO@GhZe Issue :System.InvalidOperationException: The calling thread must be STA, because many UI components require this. ==> used WpfUserControlTestMethod ")]
         public void DefaultVerticalAlignment_ShouldBeStretch()

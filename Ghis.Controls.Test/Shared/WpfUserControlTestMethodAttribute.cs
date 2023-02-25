@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿namespace Ghis.Controls.Test.Shared;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-
-
-namespace Ghis.Controls.Test.Shared;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
 {
     public override TestResult[]? Execute(ITestMethod testMethod)
@@ -30,4 +29,3 @@ internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
         return new[] { testMethod.Invoke(null) };
     }
 }
-

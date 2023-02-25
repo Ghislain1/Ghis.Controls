@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace Ghis.Controls.Test.Shared
+﻿namespace Ghis.Controls.Test.Shared
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows;
+
     internal static class DataProvider
     {
         public static void DisplayPropertyInfo(PropertyInfo[] propInfos)
@@ -51,7 +51,7 @@ namespace Ghis.Controls.Test.Shared
         {
             // Type t = typeof(LineChart);
             // Get the public properties.
-            PropertyInfo[] propInfos = classType.GetProperties(BindingFlags.Public|BindingFlags.Instance);
+            PropertyInfo[] propInfos = classType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
             Console.WriteLine("The number of public properties: {0}.\n",
                               propInfos.Length);
             // Display the public properties.
@@ -61,25 +61,25 @@ namespace Ghis.Controls.Test.Shared
         public static PropertyInfo[] GetNonPublicProperties(Type classType)
         {
             // Get the nonpublic properties.
-            PropertyInfo[] propInfos1 = classType.GetProperties(BindingFlags.NonPublic|BindingFlags.Instance);
+            PropertyInfo[] propInfos1 = classType.GetProperties(BindingFlags.NonPublic | BindingFlags.Instance);
             Console.WriteLine("The number of non-public properties: {0}.\n", propInfos1.Length);
             // Display all the nonpublic properties.
             DisplayPropertyInfo(propInfos1);
             return propInfos1;
         }
 
-        public static (double []XValues, double []YValues) GetSinWave(int numberOfPoints=8000)
+        public static (double[] XValues, double[] YValues) GetSinWave(int numberOfPoints = 8000)
         {
 
             double[] y = new double[numberOfPoints];
             double[] x = new double[numberOfPoints];
             double amplitude = 0.25 * short.MaxValue;
             double frequency = 1000;
-            for (int k = 0; k< y.Length; k++)
+            for (int k = 0; k < y.Length; k++)
             {
-                x[k]=(2 * Math.PI * k * frequency);
+                x[k] = (2 * Math.PI * k * frequency);
                 y[k] = amplitude * Math.Sin(x[k]) / numberOfPoints;
-                 
+
             }
             return (x, y);
 

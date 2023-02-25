@@ -1,8 +1,8 @@
-﻿
-using System.Windows;
-
-namespace Ghis.Controls.Test.Shared
+﻿namespace Ghis.Controls.Test.Shared
 {
+
+    using System.Windows;
+
     internal static class WpfInteraction
     {
         public static void ShowDialog(object contentWindow, int widthWindow = 955, int heightWindow = 555, string titleWindow = "")

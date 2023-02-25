@@ -28,16 +28,16 @@ namespace Ghis.Controls.Test.ProgressBars
         public void DefaultVerticalAlignment_ShouldBeStretch()
         {
             var ghisBusyIndicator = new GhisBusyIndicator();
-           // ghisBusyIndicator.ApplyDefaultStyle();
+            // ghisBusyIndicator.ApplyDefaultStyle();
 
             Assert.AreEqual(VerticalAlignment.Stretch, ghisBusyIndicator.VerticalAlignment);
         }
 
         [WpfUserControlTestMethod]
-         public void HasContent_ShouldBeFalse()
+        public void HasContent_ShouldBeFalse()
         {
-            var ghisBusyIndicator = new GhisBusyIndicator();          
-        
+            var ghisBusyIndicator = new GhisBusyIndicator();
+
             Assert.AreEqual(false, ghisBusyIndicator.HasContent);
         }
     }

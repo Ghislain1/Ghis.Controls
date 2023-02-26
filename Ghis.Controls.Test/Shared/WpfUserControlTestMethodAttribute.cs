@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
 {
@@ -14,7 +15,6 @@ internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
         {
             return Invoke(testMethod);
         }
-
 
         TestResult[]? result = null;
         var thread = new Thread(() => result = Invoke(testMethod));

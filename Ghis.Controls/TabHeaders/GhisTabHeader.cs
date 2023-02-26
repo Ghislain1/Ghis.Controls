@@ -42,7 +42,7 @@ public class GhisTabHeader : ListBox
         _mouseLeftButtonDown = false;
     }
 
-    private ListBoxItem GetListBoxItem(int index)
+    private ListBoxItem? GetListBoxItem(int index)
     {
         if (
             (index < 0) ||
@@ -80,7 +80,7 @@ public class GhisTabHeader : ListBox
 
     private Rect GetListBoxItemBounds(int index)
     {
-        ListBoxItem item = GetListBoxItem(index);
+        ListBoxItem? item = GetListBoxItem(index);
         if (item == null)
         {
             return new Rect();
@@ -98,7 +98,7 @@ public class GhisTabHeader : ListBox
             return;
         }
 
-        Point cursorScreenPosition = OpenControls.Wpf.Utilities.Windows.GetCursorPosition();
+        Point cursorScreenPosition =  WindowEx.GetCursorPosition();
         int selectedIndex = GetListBoxItemIndex(cursorScreenPosition);
 
         if ((selectedIndex < 0) || (selectedIndex >= Items.Count) || (selectedIndex == _dragIndex))

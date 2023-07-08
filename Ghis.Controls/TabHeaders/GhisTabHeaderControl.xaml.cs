@@ -29,12 +29,8 @@ namespace Ghis.Controls.TabHeaders
     /// <summary>
     /// Interaction logic for GhisGhisTabHeaderControl.xaml
     /// </summary>
-
-
     public partial class GhisTabHeaderControl : UserControl, INotifyPropertyChanged
     {
-
-
         public GhisTabHeaderControl()
         {
             InitializeComponent();

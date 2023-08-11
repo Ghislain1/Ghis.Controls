@@ -19,7 +19,7 @@ public class RelayCommand : System.Windows.Input.ICommand
 {
     #region Properties
 
-    private readonly Action<object> ?ExecuteAction;
+    private readonly Action<object>? ExecuteAction;
     private readonly Predicate<object> CanExecuteAction;
 
     #endregion
@@ -54,5 +54,3 @@ public class RelayCommand : System.Windows.Input.ICommand
 
     #endregion
 }
-
- 

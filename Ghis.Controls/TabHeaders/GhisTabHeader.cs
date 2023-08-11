@@ -98,7 +98,7 @@ public class GhisTabHeader : ListBox
             return;
         }
 
-        Point cursorScreenPosition =  WindowEx.GetCursorPosition();
+        Point cursorScreenPosition = WindowEx.GetCursorPosition();
         int selectedIndex = GetListBoxItemIndex(cursorScreenPosition);
 
         if ((selectedIndex < 0) || (selectedIndex >= Items.Count) || (selectedIndex == _dragIndex))

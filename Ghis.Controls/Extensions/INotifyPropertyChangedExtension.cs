@@ -19,11 +19,11 @@ public static class INotifyPropertyChangedExtension
 {
     public static event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
-    public static  void NotifyPropertyChanged(this INotifyPropertyChanged vm,string propertyName)
+    public static void NotifyPropertyChanged(this INotifyPropertyChanged vm, string propertyName)
     {
-        if (PropertyChanged  is null)
+        if (PropertyChanged is null)
         {
-          return;
+            return;
         }
         PropertyChanged(vm, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
     }

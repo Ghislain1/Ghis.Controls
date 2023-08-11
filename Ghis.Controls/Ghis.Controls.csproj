@@ -16,6 +16,10 @@
     <SignAssembly>True</SignAssembly>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>    
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\images\background.love.jpg" />
+  </ItemGroup>
   
   
 
@@ -24,6 +28,14 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+  
+  
+
+  <ItemGroup>
+    <Resource Include="Assets\images\background.love.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 

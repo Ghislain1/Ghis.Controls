@@ -108,7 +108,10 @@ public class Magnifier : Control
 
     private void MoveMagnifier()
     {
-        if (_border == null) return;
+        if (_border == null)
+        {
+            return;
+        }
         var length = Width * _factor;
         var radius = length / 2;
         var parentTargetPoint = Mouse.GetPosition(ParentTarget);

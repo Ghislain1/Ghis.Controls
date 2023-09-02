@@ -37,15 +37,15 @@ namespace Ghis.Controls.Charts
             }
             // ValueExtractor v = sender as ValueExtractor;
             // ItemCollection oldItems = args.OldValue as ItemCollection;
-            ItemCollection newItems = args.NewValue as ItemCollection;
+            ItemCollection? newItems = args.NewValue as ItemCollection;
             if (args.OldValue is INotifyCollectionChanged oldItems)
             {
-                oldItems.CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
+                oldItems.CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged!);
             }
 
             if (v.Items is INotifyCollectionChanged vItems)
             {
-                vItems.CollectionChanged += new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
+                vItems.CollectionChanged += new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged!);
                 if (v.ValuePath is not null)
                 {
                     v.GenerateValueList();

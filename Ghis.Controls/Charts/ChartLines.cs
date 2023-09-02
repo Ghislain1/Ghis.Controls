@@ -50,8 +50,7 @@ namespace Ghis.Controls.Charts
 
         public static void OnVerticalAxisTickValuesChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            ChartLines obj = sender as ChartLines;
-            if (obj != null && obj.VerticalAxisTickPositions != null)
+            if (sender is ChartLines obj && obj.VerticalAxisTickPositions != null)
             {
                 obj.InvalidateVisual();
                 obj.VerticalAxisTickPositions.CollectionChanged += new NotifyCollectionChangedEventHandler(obj.VerticalAxisTickPositions_CollectionChanged);

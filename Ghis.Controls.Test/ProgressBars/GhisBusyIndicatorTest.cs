@@ -10,7 +10,7 @@ namespace Ghis.Controls.Test.ProgressBars
     [TestClass]
     public class GhisBusyIndicatorTest
     {
-        [WpfUserControlTestMethod]
+          [WpfUserControlTestMethod,  ManualUI]
         public void Show_BusyIndicator_InAction_Test()
         {
             var content = new GhisBusyIndicator();
@@ -20,7 +20,7 @@ namespace Ghis.Controls.Test.ProgressBars
             WpfInteraction.ShowDialog(content);
         }
 
-        [WpfUserControlTestMethod]
+          [WpfUserControlTestMethod,  ManualUI]
         [Description("TODO@GhZe Issue :System.InvalidOperationException: The calling thread must be STA, because many UI components require this. ==> used WpfUserControlTestMethod ")]
         public void DefaultVerticalAlignment_ShouldBeStretch()
         {
@@ -30,7 +30,7 @@ namespace Ghis.Controls.Test.ProgressBars
             Assert.AreEqual(VerticalAlignment.Stretch, ghisBusyIndicator.VerticalAlignment);
         }
 
-        [WpfUserControlTestMethod]
+          [WpfUserControlTestMethod,  ManualUI]
         public void HasContent_ShouldBeFalse()
         {
             var ghisBusyIndicator = new GhisBusyIndicator();

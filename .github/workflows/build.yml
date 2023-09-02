@@ -24,5 +24,6 @@ jobs:
       - name: Build On release
         run: dotnet build -c Release --no-restore
 
-      - name: Test On Debug
-        run: dotnet test -c Debug --no-restore --verbosity normal --filter TestCategory!=WpfUserControlTestMethod
+      - name: Test except  ManualUI-Category
+        run: dotnet test /p:Configuration=Debug /p:Platform="Any CPU" --no-restore --verbosity normal --filter  TestCategory!=ManualUI
+   

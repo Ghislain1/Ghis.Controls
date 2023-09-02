@@ -12,7 +12,7 @@ public class LineChartTest
     // 1. Write test in output console for tests
     // use edit config
 
-    [WpfUserControlTestMethod]
+    [WpfUserControlTestMethod,  ManualUI]
     public void Show_LineChart_InAction_Test()
     {
         // The following line will not fail unless executed on an STA thread.

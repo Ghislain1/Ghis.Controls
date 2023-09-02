@@ -15,7 +15,7 @@ internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
         {
             return Invoke(testMethod);
         }
-
+        
         TestResult[]? result = null;
         var thread = new Thread(() => result = Invoke(testMethod));
         thread.SetApartmentState(ApartmentState.STA);

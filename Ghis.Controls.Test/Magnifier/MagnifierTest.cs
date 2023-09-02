@@ -24,7 +24,7 @@ using System.Windows.Media.Media3D;
 [TestClass]
 public class MagnifierTest
 {
-    [WpfUserControlTestMethod]
+      [WpfUserControlTestMethod,  ManualUI]
     public void Show_Magnifier_InAction_Test()
     {
         var content = new UserControl();

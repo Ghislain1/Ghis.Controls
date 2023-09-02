@@ -22,7 +22,7 @@ public class LineChartTest
         WpfInteraction.ShowDialog(content, titleWindow: "Line Chart in action");
 
     }
-    [WpfUserControlTestMethod,TestMethod]
+    [WpfUserControlTestMethod,ManualUI]
     public void TestLine_Init_Property_True()
     {
         

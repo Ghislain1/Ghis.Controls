@@ -8,25 +8,16 @@
 
 namespace Ghis.Controls.Test.Carousels;
 
-using Ghis.Controls.Carousels;
-using Ghis.Controls.Test.Charts;
-using Ghis.Controls.Test.Shared;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-[TestClass]
-public class CarouselTest
+public class CarouselData
 {
-    [WpfUserControlTestMethod, ManualUI]    
-    public void Carousel_InAction()
-    {
-        var view = new CarouselView();
-        view.DataContext = new CarouselViewModel();
-        WpfInteraction.ShowDialog(view, titleWindow: $"{nameof(Carousel)} in Action");
-    }
+    public string? Name { get; set; }
+    public string? ShortName { get; set; }
+    public string? ImageSource { get; set; }
+    public string? Text { get; set; }
 }

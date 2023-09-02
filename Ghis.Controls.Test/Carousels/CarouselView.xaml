@@ -9,6 +9,59 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-    <Carousels:Carousel />
+ 
+    <Carousels:Carousel  
+                                     
+                                        x:Name="_carouselDABRadioStations"
+                                        ItemsSource="{Binding Items}"
+                                        SelectedItem="{Binding SelectedItem,Mode=TwoWay}"
+                                        ShowRotation="True"
+                                        TiltInDegrees="10"
+                                        AutoSizeToParent="true"
+                                        RotationSpeed="100"
+                                        VerticalOrientation="False"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch">
+      <Carousels:Carousel.Style>
+        <Style TargetType="Carousels:Carousel">
+          <Setter Property="CarouselItemTemplate">
+            <Setter.Value>
+              <ControlTemplate>
+                <Border BorderThickness="1"
+                        BorderBrush="Gainsboro"
+                        Background="SteelBlue"
+                        Width="250"
+                        Height="150">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*" />
+                      <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0"
+                            BorderThickness="0"
+                            Background="White">
+                      <Image Grid.Row="0"
+                             Source="{Binding ImageSource}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Height="100" />
+                    </Border>
+                    <Label Grid.Row="1"
+                           Content="{Binding ShortName}"
+                           Foreground="White"
+                           Background="Transparent"
+                           FontSize="20"
+                           FontFamily="Arial"
+                           
+                           DockPanel.Dock="Bottom"
+                           Height="Auto" />
+                  </Grid>
+                </Border>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Carousels:Carousel.Style>
+    </Carousels:Carousel>
   </Grid>
 </UserControl>

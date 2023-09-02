@@ -4,6 +4,7 @@ using Ghis.Controls.Charts;
 using Ghis.Controls.Test.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
+using System.Windows.Controls;
 
 [TestClass]
 public class LineChartTest
@@ -21,12 +22,15 @@ public class LineChartTest
         WpfInteraction.ShowDialog(content, titleWindow: "Line Chart in action");
 
     }
-    [TestMethod]
+    [WpfUserControlTestMethod,TestMethod]
     public void TestLine_Init_Property_True()
     {
+        
         // In General is Dat for Fluentassertions
-        var line = new LineChart();
-        line.ValueAxisItemTemplate.Should().NotBeNull();
+        var lineChart = new LineChart();
+      
+        //Assert
+        lineChart.ValueAxisItemTemplate.Should().NotBeNull();
     }
 
 

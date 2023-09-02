@@ -196,7 +196,6 @@ public class Carousel : Canvas
             RotationSpeed = (double)e.NewValue;
         }
     }
-
     protected virtual void OnSelectedItemChanged(DependencyPropertyChangedEventArgs e)
     {
         if (e.NewValue != null)
@@ -233,7 +232,6 @@ public class Carousel : Canvas
             CarouselItemTemplate = (ControlTemplate)e.NewValue;
         }
     }
-
     private double GetDegreesNeededToPlaceElementInFront(int targetIndex)
     {
         double rawDegrees = this.currentRotation - 180.0 + (360.0 * (double)targetIndex) / (double)this.canvas.Children.Count;

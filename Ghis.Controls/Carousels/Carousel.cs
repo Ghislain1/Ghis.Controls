@@ -54,7 +54,8 @@ public class Carousel : Canvas
     public static readonly DependencyProperty TiltInDegreesProperty = DependencyProperty.Register("TiltInDegrees", typeof(double), typeof(Carousel), new FrameworkPropertyMetadata(0.0, new PropertyChangedCallback((d, e) => ((Carousel)d).OnTiltInDegreesChanged(e))));
     public static readonly DependencyProperty RotationSpeedProperty = DependencyProperty.Register("RotationSpeed", typeof(double), typeof(Carousel), new FrameworkPropertyMetadata(constMaximumRotationSpeed, new PropertyChangedCallback((d, e) => ((Carousel)d).OnRotationSpeedChanged(e))));
     public static readonly DependencyProperty AutoSizeToParentProperty = DependencyProperty.Register("AutoSizeToParent", typeof(bool), typeof(Carousel), new FrameworkPropertyMetadata(true, new PropertyChangedCallback((d, e) => ((Carousel)d).OnAutoSizeToParentChanged(e))));
-    
+    public static readonly DependencyProperty VerticalOrientationProperty = DependencyProperty.Register("VerticalOrientationProperty", typeof(bool), typeof(Carousel), new FrameworkPropertyMetadata(false, new PropertyChangedCallback((d, e) => ((Carousel)d).OnVerticalOrientationChanged(e))));
+
     public delegate void SelectionChangedEventHandler(FrameworkElement selectedElement);
     public event SelectionChangedEventHandler SelectionChanged;
     public bool AutoSizeToParent
@@ -70,49 +71,24 @@ public class Carousel : Canvas
     }
     public double RotationSpeed
     {
-        get
-        {
-            return (double)GetValue(RotationSpeedProperty);
-        }
-        set
-        {
-            SetValue(RotationSpeedProperty, Math.Min(Math.Max(value, constMinimumRotationSpeed), constMaximumRotationSpeed));
-        }
+        get => (double)GetValue(RotationSpeedProperty);
+        set => SetValue(RotationSpeedProperty, Math.Min(Math.Max(value, constMinimumRotationSpeed), constMaximumRotationSpeed));
     }
-    public static readonly DependencyProperty VerticalOrientationProperty = DependencyProperty.Register("VerticalOrientationProperty", typeof(bool), typeof(Carousel), new FrameworkPropertyMetadata(false, new PropertyChangedCallback((d, e) => ((Carousel)d).OnVerticalOrientationChanged(e))));
     public bool VerticalOrientation
     {
-        get
-        {
-            return (bool)GetValue(VerticalOrientationProperty);
-        }
-        set
-        {
-            SetValue(VerticalOrientationProperty, value);
-        }
+        get => (bool)GetValue(VerticalOrientationProperty);
+        set => SetValue(VerticalOrientationProperty, value);
     }
     public double Scale
     {
-        get
-        {
-            return (double)GetValue(ScaleProperty);
-        }
-        set
-        {
-            SetValue(ScaleProperty, Math.Min(Math.Max(value, constMinimumScale), constMaximumScale));
-        }
+        get => (double)GetValue(ScaleProperty);
+        set => SetValue(ScaleProperty, Math.Min(Math.Max(value, constMinimumScale), constMaximumScale));
     }
-   
+
     public double Fade
     {
-        get
-        {
-            return (double)GetValue(FadeProperty);
-        }
-        set
-        {
-            SetValue(FadeProperty, Math.Min(Math.Max(value, constMinimumFade), constMaximumFade));
-        }
+        get => (double)GetValue(FadeProperty);
+        set => SetValue(FadeProperty, Math.Min(Math.Max(value, constMinimumFade), constMaximumFade));
     }
 
     public ControlTemplate CarouselItemTemplate
@@ -460,7 +436,7 @@ public class Carousel : Canvas
             this.timer.Start();
         }
     }
-    private void TimerTick(object sender, EventArgs e)
+    private void TimerTick(object ?sender, EventArgs e)
     {
         DateTime timeNow = DateTime.Now;
         double rotationAmount = (timeNow - this.previousTime).TotalSeconds * RotationSpeed;

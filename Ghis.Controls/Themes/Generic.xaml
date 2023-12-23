@@ -6,6 +6,7 @@
     <ResourceDictionary Source="/Ghis.Controls;component/Assets/LineChartAndPieChart.xaml"/>
     <ResourceDictionary Source="/Ghis.Controls;component/Assets/GhisTabHeaderControl.xaml" />
     <ResourceDictionary Source="/Ghis.Controls;component/Assets/Magnifier.xaml" />
+    <ResourceDictionary Source="/Ghis.Controls;component/Assets/Carousel.xaml" />
   </ResourceDictionary.MergedDictionaries>
   <!-- Arugment used inside the element in MergedDictionaries !!! up -->
   <SolidColorBrush x:Key="Accent" Color="Green" />

@@ -9,7 +9,7 @@ using System.Windows;
 
 internal class WpfUserControlTestMethodAttribute : TestMethodAttribute
 {
-    public override TestResult[]? Execute(ITestMethod testMethod)
+    public override TestResult[] Execute(ITestMethod testMethod)
     {
         if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
         {

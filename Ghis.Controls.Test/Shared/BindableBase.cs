@@ -23,7 +23,7 @@
 
             return true;
         }
-        protected virtual bool SetProperty<T>(ref T storage, T value, Action onChanged, [CallerMemberName] string propertyName = null, [CallerLineNumber] int lineNumber = 0)
+        protected virtual bool SetProperty<T>(ref T storage, T value, Action onChanged, [CallerMemberName] string? propertyName = null, [CallerLineNumber] int lineNumber = 0)
         {
             if (EqualityComparer<T>.Default.Equals(storage, value))
             {

@@ -13,7 +13,7 @@ public class LineChartTest
     // 1. Write test in output console for tests
     // use edit config
 
-    [WpfUserControlTestMethod,  ManualUI]
+    [WpfUserControlTestMethod, ManualUI]
     public void Show_LineChart_InAction_Test()
     {
         // The following line will not fail unless executed on an STA thread.
@@ -22,13 +22,13 @@ public class LineChartTest
         WpfInteraction.ShowDialog(content, titleWindow: "Line Chart in action");
 
     }
-    [WpfUserControlTestMethod,ManualUI]
+    [WpfUserControlTestMethod, ManualUI]
     public void TestLine_Init_Property_True()
     {
-        
+
         // In General is Dat for Fluentassertions
         var lineChart = new LineChart();
-      
+
         //Assert
         lineChart.ValueAxisItemTemplate.Should().NotBeNull();
     }

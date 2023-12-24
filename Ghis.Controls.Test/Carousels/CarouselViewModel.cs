@@ -14,23 +14,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
- 
+
 using System.Collections.ObjectModel;
 
-internal class CarouselViewModel: BindableBase
+internal class CarouselViewModel : BindableBase
 {
     private ObservableCollection<CarouselData> items = new ObservableCollection<CarouselData>();
     private CarouselData selectedItem;
-    public  ObservableCollection<CarouselData> Items
+    public ObservableCollection<CarouselData> Items
     {
-        get => this.items;        
-        set=>  this.SetProperty< ObservableCollection < CarouselData >>(ref this.items,value);
-        
+        get => this.items;
+        set => this.SetProperty<ObservableCollection<CarouselData>>(ref this.items, value);
+
     }
     public CarouselData SelectedItem
     {
         get => this.selectedItem;
-        set => this.SetProperty< CarouselData>(ref this.selectedItem, value);
+        set => this.SetProperty<CarouselData>(ref this.selectedItem, value);
     }
     public CarouselViewModel()
     {

@@ -23,7 +23,7 @@ using System.Windows.Media;
 [TestClass]
 public class GhisTabHeaderControlTest
 {
-      [WpfUserControlTestMethod,  ManualUI]
+    [WpfUserControlTestMethod, ManualUI]
     public void Show_GhisTabHeaderControl_InAction_Test()
     {
         var content = this.CreateControl();

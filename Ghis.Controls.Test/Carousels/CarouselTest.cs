@@ -22,11 +22,7 @@ using System.Windows;
 [TestClass]
 public class CarouselTest
 {
-    [WpfUserControlTestMethod, ManualUI]    
-    public void Carousel_InAction()
-    {
-        var view = new CarouselView();
-        view.DataContext = new CarouselViewModel();
-        WpfInteraction.ShowDialog(view, titleWindow: $"{nameof(Carousel)} in Action");
-    }
+    [WpfUserControlTestMethod, ManualUI]
+    public void Carousel_InAction() => WpfInteraction.ShowDialog(new CarouselView() { DataContext = new CarouselViewModel() }, titleWindow: $"{nameof(Carousel)} in Action");
+
 }

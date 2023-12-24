@@ -436,7 +436,7 @@ public class Carousel : Canvas
             this.timer.Start();
         }
     }
-    private void TimerTick(object ?sender, EventArgs e)
+    private void TimerTick(object? sender, EventArgs e)
     {
         DateTime timeNow = DateTime.Now;
         double rotationAmount = (timeNow - this.previousTime).TotalSeconds * RotationSpeed;

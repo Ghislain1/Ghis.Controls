@@ -7,7 +7,4 @@ internal class ManualUI : TestCategoryBaseAttribute
 {
     public override IList<string> TestCategories => new[] { nameof(ManualUI) }.ToList();
 
-
-
-
 }

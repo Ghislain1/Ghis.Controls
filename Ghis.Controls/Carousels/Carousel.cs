@@ -158,6 +158,10 @@ public class Carousel : Canvas
             TiltInDegrees = (double)e.NewValue;
         }
     }
+    public override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+    }
     protected virtual void OnAutoSizeToParentChanged(DependencyPropertyChangedEventArgs e)
     {
         if (e.NewValue != null)

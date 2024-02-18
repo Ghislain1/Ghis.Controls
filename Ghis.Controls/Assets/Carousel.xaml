@@ -6,7 +6,9 @@
         <!--<ResourceDictionary Source="Basic/ControlBasic.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type controls:Carousel}">
+    <Style x:Key="CarouselStyleBase1" TargetType="{x:Type controls:Carousel}">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Margin" Value="20" />
         <Setter Property="CarouselItemTemplate">
             <Setter.Value>
                 <ControlTemplate>
@@ -24,12 +26,12 @@
                             <Border
                                 Grid.Row="0"
                                 Background="Transparent"
-                               BorderBrush="Green"
+                                BorderBrush="Green"
                                 BorderThickness="2">
                                 <Image
                                     Grid.Row="0"
+                                    Width="100"
                                     Height="100"
-                                  Width="100"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Source="{Binding ImageSource}" />
@@ -49,6 +51,54 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+    <Style x:Key="CarouselStyleBase2" TargetType="{x:Type controls:Carousel}">
+        <Setter Property="CarouselItemTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Width="250"
+                        Height="150"
+                        Background="SteelBlue"
+                        BorderBrush="Gainsboro"
+                        BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Border
+                                Grid.Row="0"
+                                Background="Transparent"
+                                BorderBrush="Green"
+                                BorderThickness="2">
+                                <Image
+                                    Grid.Row="0"
+                                    Width="100"
+                                    Height="100"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Source="{Binding ImageSource}" />
+                            </Border>
+                            <Label
+                                Grid.Row="1"
+                                Height="Auto"
+                                Background="Transparent"
+                                Content="{Binding ShortName}"
+                                DockPanel.Dock="Bottom"
+                                FontFamily="Arial"
+                                FontSize="20"
+                                Foreground="White" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource CarouselStyleBase1}" TargetType="{x:Type controls:Carousel}" />
+
     <!--<Carousels:Carousel.Style>
        <Style TargetType="Carousels:Carousel">
            <Setter Property="CarouselItemTemplate">
